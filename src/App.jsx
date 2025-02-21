@@ -6,8 +6,8 @@ import Queue from './components/Queue';
 import PriorityQueue from './utils/priorityQueue';
 
 const App = () => {
-    const clientId = process.env.REACT_APP_API_URL;
-    const redirectUri = process.env.REACT_APP_API_KEY;
+    const clientId = import.meta.env.VITE_API_KEY;
+    const redirectUri = import.meta.env.VITE_API_URL;
     const songs = useSpotify(clientId, redirectUri);
     const [queue, setQueue] = useState(new PriorityQueue());
 

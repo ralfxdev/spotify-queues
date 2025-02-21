@@ -21,7 +21,7 @@ const Queue = ({ queue, setQueue }) => {
                     setIsPlaying(false);
                     setCurrentSong(null);
                 }
-            }, 10000);
+            }, 60000);
         }
 
         return () => clearInterval(interval);
@@ -145,6 +145,17 @@ const Queue = ({ queue, setQueue }) => {
                         >
                             <FaForward size={24} className={queue.isEmpty() ? 'opacity-50' : ''} />
                         </button>
+                    </div>
+                    <div className="flex justify-center mt-4">
+                        <iframe 
+                            src={`https://open.spotify.com/embed/track/${currentSong.song.id}`} 
+                            width="100%" 
+                            height="80" 
+                            frameBorder="0" 
+                            allowtransparency="true" 
+                            allow="encrypted-media"
+                            className="rounded-lg"
+                        ></iframe>
                     </div>
                 </div>
             )}
